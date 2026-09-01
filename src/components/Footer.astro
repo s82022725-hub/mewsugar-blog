@@ -1,0 +1,56 @@
+---
+const today = new Date();
+---
+
+<footer class="bg-[#FDFBF7] pt-12 pb-8 border-t border-gray-200 mt-12">
+	<div class="max-w-6xl mx-auto px-4">
+		
+		<!-- Top Section (3 Columns) -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+			
+			<!-- Column 1: Brand -->
+			<div class="flex flex-col items-center md:items-start">
+				<h3 class="font-bold text-[#A67C52] text-xl mb-3">半糖日常</h3>
+				<p class="text-[#4A5568] text-sm leading-relaxed max-w-xs">
+					認真照顧毛孩，也把自己研究過、用過、踩過雷的東西整理下來。
+				</p>
+			</div>
+
+			<!-- Column 2: Sitemap -->
+			<div class="flex flex-col items-center md:items-start">
+				<h4 class="font-bold text-gray-700 mb-3">導覽</h4>
+				<ul class="text-[#4A5568] text-sm space-y-2 flex flex-col">
+					<li><a href="/" class="hover:text-[#A67C52] transition-colors">首頁</a></li>
+					<li><a href="/category/health" class="hover:text-[#A67C52] transition-colors">寵物健康</a></li>
+					<li><a href="/category/pets-life" class="hover:text-[#A67C52] transition-colors">毛孩生活</a></li>
+					<li><a href="/category/reviews" class="hover:text-[#A67C52] transition-colors">生活實用</a></li>
+					<li><a href="/category/notes" class="hover:text-[#A67C52] transition-colors">我的日常</a></li>
+					<li><a href="/about" class="hover:text-[#A67C52] transition-colors">關於半糖</a></li>
+					<li><a href="/contact" class="hover:text-[#A67C52] transition-colors">聯絡我們</a></li>
+				</ul>
+			</div>
+
+			<!-- Column 3: Legal -->
+			<div class="flex flex-col items-center md:items-start">
+				<h4 class="font-bold text-gray-700 mb-3">法律與政策</h4>
+				<ul class="text-[#4A5568] text-sm space-y-2 flex flex-col">
+					<li><a href="/disclaimer-affiliate" class="hover:text-[#A67C52] transition-colors">合作與推薦聲明</a></li>
+					<li><a href="/privacy" class="hover:text-[#A67C52] transition-colors">隱私權政策</a></li>
+					<li><a href="/terms" class="hover:text-[#A67C52] transition-colors">服務條款</a></li>
+					<li><a href="/disclaimer" class="hover:text-[#A67C52] transition-colors">免責聲明</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Middle Section: Medical Disclaimer -->
+		<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-xs text-gray-500 mb-8 leading-relaxed text-center">
+			<strong>醫療免責聲明：</strong>本網站內容主要為寵物照護經驗與公開資料整理，僅供一般資訊參考，不能取代獸醫師的專業診斷與治療。若毛孩出現健康異常或緊急情況，請儘速諮詢獸醫師。
+		</div>
+
+		<!-- Bottom Section: Copyright -->
+		<div class="text-center text-xs text-gray-400">
+			&copy; {today.getFullYear()} 半糖日常 (Half-Sugar Daily). All rights reserved.
+		</div>
+
+	</div>
+</footer>

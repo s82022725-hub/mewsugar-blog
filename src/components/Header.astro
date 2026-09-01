@@ -1,0 +1,58 @@
+---
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header class="bg-[#FDFBF7] shadow-sm sticky top-0 z-50">
+	<nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+		<!-- Left: Logo -->
+		<h2 class="font-bold text-xl m-0 text-[#A67C52]">
+			<a href="/" class="no-underline text-[#A67C52] hover:text-[#FF6F61] transition-colors">{SITE_TITLE}</a>
+		</h2>
+		
+		<!-- Center: Desktop Menu -->
+		<div class="hidden md:flex gap-6 items-center flex-1 justify-center">
+			<HeaderLink href="/">首頁</HeaderLink>
+			<HeaderLink href="/category/health">寵物健康</HeaderLink>
+			<HeaderLink href="/category/pets-life">毛孩生活</HeaderLink>
+			<HeaderLink href="/category/reviews">生活實用</HeaderLink>
+			<HeaderLink href="/category/notes">我的日常</HeaderLink>
+			<HeaderLink href="/about">關於半糖</HeaderLink>
+		</div>
+
+		<!-- Right: Desktop CTA & Mobile Hamburger -->
+		<div class="flex items-center gap-4">
+			<a href="https://mewsugar-tracker.pages.dev" target="_blank" class="hidden md:inline-flex bg-[#A67C52] text-white px-5 py-2 rounded-full font-medium hover:bg-[#FF6F61] transition-colors text-sm shadow-sm">
+				寵物血糖日記
+			</a>
+			<!-- Hamburger Button (Mobile) -->
+			<button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-[#A67C52]" aria-label="Menu">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+			</button>
+		</div>
+	</nav>
+
+	<!-- Mobile Menu Dropdown -->
+	<div id="mobile-menu" class="hidden md:hidden bg-[#FDFBF7] border-t border-gray-100 absolute w-full left-0 top-16 shadow-lg">
+		<div class="flex flex-col px-4 py-2">
+			<HeaderLink href="/" class="py-3 border-b border-gray-100">首頁</HeaderLink>
+			<HeaderLink href="/category/health" class="py-3 border-b border-gray-100">寵物健康</HeaderLink>
+			<HeaderLink href="/category/pets-life" class="py-3 border-b border-gray-100">毛孩生活</HeaderLink>
+			<HeaderLink href="/category/reviews" class="py-3 border-b border-gray-100">生活實用</HeaderLink>
+			<HeaderLink href="/category/notes" class="py-3 border-b border-gray-100">我的日常</HeaderLink>
+			<HeaderLink href="/about" class="py-3 border-b border-gray-100">關於半糖</HeaderLink>
+			<a href="https://mewsugar-tracker.pages.dev" target="_blank" class="mt-4 mb-2 bg-[#A67C52] text-white px-4 py-3 rounded-xl font-medium text-center hover:bg-[#FF6F61] transition-colors shadow-sm">
+				寵物血糖日記 App
+			</a>
+		</div>
+	</div>
+</header>
+
+<script>
+	// Toggle mobile menu
+	const btn = document.getElementById('mobile-menu-btn');
+	const menu = document.getElementById('mobile-menu');
+	btn?.addEventListener('click', () => {
+		menu?.classList.toggle('hidden');
+	});
+</script>
