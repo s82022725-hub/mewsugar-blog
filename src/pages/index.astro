@@ -54,7 +54,7 @@ const latestPost = posts[0];
 
 					{latestPost && (
 						<div class="max-w-4xl mx-auto mb-10">
-							<a href={'/blog/' + latestPost.slug + '/'} class="group flex flex-col bg-[#FDFBF7] rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+							<a href={'/blog/' + latestPost.id + '/'} class="group flex flex-col bg-[#FDFBF7] rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
 								<div class="aspect-[16/9] md:aspect-[2/1] bg-gray-200 overflow-hidden relative">
 									<img src="../../assets/blog-placeholder-1.jpg" alt={latestPost.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 								</div>
