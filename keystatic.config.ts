@@ -15,11 +15,11 @@ export default config({
       path: 'src/content/blog/*',
       format: { contentField: 'content' },
       schema: {
-        title: fields.slug({ name: { label: 'Title' } }),
+        title: fields.text({ label: 'Title' }),
         description: fields.text({ label: 'Description' }),
         pubDate: fields.date({ label: 'Publish Date' }),
         updatedDate: fields.date({ label: 'Update Date' }),
-        heroImage: fields.image({ label: '封面圖', directory: 'src/assets', publicPath: '../../assets' }),
+        heroImage: fields.image({ label: 'Hero Image', directory: 'src/assets', publicPath: '../../assets', validation: { isRequired: false } }),
         category: fields.text({ label: 'Category', defaultValue: 'health' }),
         author: fields.text({ label: 'Author', defaultValue: 'MewSugar' }),
         tags: fields.array(fields.text({ label: 'Tag' }), { label: 'Tags', itemLabel: props => props.value }),
@@ -29,5 +29,8 @@ export default config({
     }),
   },
 });
+
+
+
 
 
