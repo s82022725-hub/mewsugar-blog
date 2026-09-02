@@ -3,7 +3,7 @@ title: 貓咪糖尿病是什麼？症狀、原因、治療與日常照護一次�
 description: 貓咪一直喝水、尿尿變多，可能是糖尿病的警訊。帶你認識貓咪糖尿病症狀、原因、治療方式、飲食管理與居家監測，了解確診後如何照顧糖貓。
 pubDate: 2026-09-02
 updatedDate: 2026-09-02
-
+heroImage: ../../assets/what-is-cat-diabetes/heroImage.jpg
 category: health
 author: 半糖日常
 tags:
@@ -362,4 +362,3 @@ MewSugar 不取代獸醫師，而是幫你把每天的照護資料整理好。
 }
 }
 </script>
-
