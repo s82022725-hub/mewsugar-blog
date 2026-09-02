@@ -10,10 +10,15 @@ const blog = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.string(),
-			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			// 新增的分類與標籤系統
+			category: z.enum(['health', 'pets-life', 'reviews', 'notes']),
+			featured: z.boolean().default(false).optional(),
+			author: z.string().default('半糖日常'),
+			// 針對醫療健康文章的參考來源
+			references: z.array(z.string()).optional(),
 		}),
 });
 

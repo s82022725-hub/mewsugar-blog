@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+
+export async function getStaticPaths() {
+	const categories = [
+		{ id: 'health', name: '寵物健康' },
+		{ id: 'pets-life', name: '毛孩生活' },
+		{ id: 'reviews', name: '生活實用' },
+		{ id: 'notes', name: '我的日常' },
+	];
+
+	const posts = await getCollection('blog');
+
+	return categories.map((category) => {
+		const filteredPosts = posts.filter((post) => post.data.category === category.id)
+								   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+		return {
+			params: { category: category.id },
+			props: { categoryName: category.name, posts: filteredPosts },
+		};
+	});
+}
+
+const { category } = Astro.params;
+const { categoryName, posts } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-TW">
+	<head>
+		<BaseHead title={`${categoryName} | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-[#FDFBF7] text-[#4A5568] font-sans antialiased min-h-screen flex flex-col">
+		<Header />
+		<main class="flex-grow max-w-5xl mx-auto px-4 py-12 w-full">
+			
+			<div class="mb-12 border-b border-gray-200 pb-8">
+				<h1 class="text-3xl font-bold text-[#A67C52]">{categoryName}</h1>
+				<p class="text-gray-500 mt-2">探索所有關於「{categoryName}」的文章</p>
+			</div>
+
+			{posts.length === 0 ? (
+				<div class="text-center py-20 text-gray-400 bg-white rounded-3xl border border-gray-100 shadow-sm">
+					<p class="text-lg">這個分類目前還沒有文章喔！</p>
+					<p class="text-sm mt-2">站長正在努力撰寫中 ✍️</p>
+				</div>
+			) : (
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{posts.map((post) => (
+						<a href={`/blog/${post.id}/`} class="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+							<div class="aspect-[4/3] bg-gray-100 overflow-hidden relative">
+								{post.data.heroImage ? (
+									<img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+								) : (
+									<div class="w-full h-full flex items-center justify-center text-gray-300 font-bold bg-gray-50 group-hover:scale-105 transition-transform duration-500">
+										MewSugar
+									</div>
+								)}
+								{post.data.featured && (
+									<span class="absolute top-4 left-4 bg-[#FF6F61] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">精選</span>
+								)}
+							</div>
+							<div class="p-6 flex flex-col flex-grow">
+								<h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#A67C52] transition-colors line-clamp-2">{post.data.title}</h3>
+								<p class="text-gray-500 text-sm mb-4 line-clamp-2">{post.data.description}</p>
+								<div class="mt-auto flex items-center justify-between text-xs text-gray-400 font-medium">
+									<span>{post.data.pubDate.toLocaleDateString('zh-TW')}</span>
+									<span>閱讀更多 &rarr;</span>
+								</div>
+							</div>
+						</a>
+					))}
+				</div>
+			)}
+		</main>
+		<Footer />
+	</body>
+</html>

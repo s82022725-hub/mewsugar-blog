@@ -5,79 +5,100 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category, author, references } = Astro.props;
+
+// Category Name Mapping
+const categoryMap: Record<string, string> = {
+	'health': '寵物健康',
+	'pets-life': '毛孩生活',
+	'reviews': '生活實用',
+	'notes': '我的日常'
+};
+const categoryName = categoryMap[category as string] || '文章';
 ---
 
-<html lang="en">
+<html lang="zh-TW">
 	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
+		<BaseHead title={`${title} | ${SITE_TITLE}`} description={description} />
 	</head>
 
-	<body>
+	<body class="bg-[#FDFBF7] text-[#4A5568] font-sans antialiased">
 		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
+		<main class="max-w-4xl mx-auto px-4 py-12">
+			<article class="bg-white rounded-[2rem] shadow-sm border border-gray-100 overflow-hidden">
+				
+				{/* Hero Image */}
+				{heroImage && (
+					<div class="aspect-[21/9] w-full overflow-hidden bg-gray-100">
+						<Image width={1200} height={630} src={heroImage} alt={title} class="w-full h-full object-cover" />
 					</div>
-					<slot />
+				)}
+
+				<div class="p-8 md:p-12">
+					{/* Meta Info */}
+					<div class="flex flex-wrap items-center gap-4 text-sm font-medium text-gray-500 mb-6">
+						<a href={`/category/${category}`} class="bg-[#F8F5F0] text-[#A67C52] px-3 py-1 rounded-full hover:bg-[#EAE4D9] transition-colors">
+							{categoryName}
+						</a>
+						<div class="flex items-center gap-2">
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+							{author}
+						</div>
+						<div class="flex items-center gap-2">
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+							<FormattedDate date={pubDate} />
+						</div>
+					</div>
+
+					{/* Title */}
+					<h1 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight mb-8 text-balance">
+						{title}
+					</h1>
+
+					{/* Medical Disclaimer Alert (Only for Health Category) */}
+					{category === 'health' && (
+						<div class="bg-[#FFF8F6] border-l-4 border-[#FF6F61] p-4 mb-8 rounded-r-xl">
+							<div class="flex items-start">
+								<div class="flex-shrink-0">
+									<svg class="h-5 w-5 text-[#FF6F61]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
+								</div>
+								<div class="ml-3">
+									<h3 class="text-sm font-bold text-[#D9534F]">醫療免責聲明</h3>
+									<div class="mt-1 text-sm text-[#D9534F] opacity-90">
+										本文內容皆為照護經驗與資料整理，無法取代專業獸醫師的診斷與治療。若毛孩有立即的健康疑慮，請務必尋求獸醫協助。
+									</div>
+								</div>
+							</div>
+						</div>
+					)}
+
+					{/* Content */}
+					<div class="prose prose-lg max-w-none prose-headings:text-gray-800 prose-a:text-[#A67C52] hover:prose-a:text-[#8C6239] prose-img:rounded-xl">
+						<slot />
+					</div>
+
+					{/* References Section */}
+					{references && references.length > 0 && (
+						<div class="mt-12 pt-8 border-t border-gray-100">
+							<h3 class="text-lg font-bold text-gray-800 mb-4">📚 資料來源與參考文獻</h3>
+							<ul class="list-decimal list-inside space-y-2 text-sm text-gray-500">
+								{references.map((ref) => (
+									<li class="break-words">{ref}</li>
+								))}
+							</ul>
+						</div>
+					)}
+
+					{/* Footer Meta */}
+					{updatedDate && (
+						<div class="mt-8 text-right text-sm text-gray-400 italic">
+							最後更新於 <FormattedDate date={updatedDate} />
+						</div>
+					)}
 				</div>
 			</article>
 		</main>

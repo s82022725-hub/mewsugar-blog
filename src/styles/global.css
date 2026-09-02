@@ -7,3 +7,5 @@
 body {
   font-family: var(--font-sans);
 }
+
+@plugin "@tailwindcss/typography";

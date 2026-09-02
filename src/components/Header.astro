@@ -22,8 +22,9 @@ import HeaderLink from './HeaderLink.astro';
 
 		<!-- Right: Desktop CTA & Mobile Hamburger -->
 		<div class="flex items-center gap-4">
-			<a href="https://mewsugar-tracker.pages.dev" target="_blank" class="hidden md:inline-flex bg-[#A67C52] text-white px-5 py-2 rounded-full font-medium hover:bg-[#FF6F61] transition-colors text-sm shadow-sm">
+			<a href="/app" class="hidden md:flex items-center gap-2 bg-[#FF6F61] text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-[#E65A4F] transition-colors shadow-sm hover:shadow-md">
 				寵物血糖日記
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
 			</a>
 			<!-- Hamburger Button (Mobile) -->
 			<button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-[#A67C52]" aria-label="Menu">
@@ -41,7 +42,7 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/category/reviews" class="py-3 border-b border-gray-100">生活實用</HeaderLink>
 			<HeaderLink href="/category/notes" class="py-3 border-b border-gray-100">我的日常</HeaderLink>
 			<HeaderLink href="/about" class="py-3 border-b border-gray-100">關於半糖</HeaderLink>
-			<a href="https://mewsugar-tracker.pages.dev" target="_blank" class="mt-4 mb-2 bg-[#A67C52] text-white px-4 py-3 rounded-xl font-medium text-center hover:bg-[#FF6F61] transition-colors shadow-sm">
+			<a href="/app" class="mt-4 mb-2 bg-[#A67C52] text-white px-4 py-3 rounded-xl font-medium text-center hover:bg-[#FF6F61] transition-colors shadow-sm">
 				寵物血糖日記 App
 			</a>
 		</div>
