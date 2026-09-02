@@ -1,9 +1,15 @@
----
+﻿---
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const latestPost = posts[0];
 ---
 
 <!doctype html>
@@ -15,163 +21,58 @@ import { getCollection } from 'astro:content';
 		<Header />
 		<main>
 			
-			{/* 第二區：Hero Section */}
 			<section class="max-w-6xl mx-auto px-4 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-12">
-				{/* Text Content */}
 				<div class="flex-1 text-center md:text-left">
 					<h1 class="text-2xl md:text-4xl font-semibold text-[#A67C52] leading-snug mb-6 text-balance tracking-wide">
-						陪毛孩過健康生活，也分享生活裡真正有用的東西。
+						記錄毛孩健康生活，<br/>分享生活裡的半糖好東西。
 					</h1>
 					<p class="text-base md:text-lg text-gray-500 mb-10 font-normal tracking-wide">
-						半糖日常 - 毛孩健康、質感好物與生活探索
+						半糖日常 - 毛孩健康與質感好物探索
 					</p>
 					<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 						<a href="/category/health" class="bg-[#A67C52] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8C6239] transition-colors shadow-md text-center whitespace-nowrap">
 							探索寵物健康
 						</a>
-						<a href="/category/notes" class="bg-white text-[#A67C52] border-2 border-[#A67C52] px-8 py-3 rounded-full font-bold hover:bg-[#FDFBF7] transition-colors shadow-sm text-center whitespace-nowrap">
-							看看半糖日常
+						<a href="/blog" class="bg-white text-[#A67C52] border-2 border-[#A67C52] px-8 py-3 rounded-full font-bold hover:bg-[#FDFBF7] transition-colors shadow-sm text-center whitespace-nowrap">
+							所有文章
 						</a>
 					</div>
 				</div>
-				{/* Image Content */}
 				<div class="flex-1 w-full max-w-lg mx-auto md:max-w-none">
 					<div class="aspect-[4/3] bg-gray-100 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-						<img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?q=80&w=2070&auto=format&fit=crop" alt="陽光灑在溫暖客廳與貓咪" class="w-full h-full object-cover opacity-90" />
+						<img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?q=80&w=2070&auto=format&fit=crop" alt="貓咪在溫暖客廳" class="w-full h-full object-cover opacity-90" />
 					</div>
 				</div>
 			</section>
 
-			{/* 第三區：核心權威區 (寵物健康專區) */}
 			<section class="bg-white py-16 md:py-24">
 				<div class="max-w-6xl mx-auto px-4">
 					<div class="text-center mb-12">
-						<h2 class="text-xl md:text-2xl font-semibold text-[#A67C52] mb-4 tracking-wide">寵物血糖與糖尿病專區</h2>
-						<p class="text-gray-500">從測量、判讀到日常照護，把專業資訊整理成飼主看得懂的筆記。</p>
+						<h2 class="text-xl md:text-2xl font-semibold text-[#A67C52] mb-4 tracking-wide">最新核心指南</h2>
+						<p class="text-gray-500">從測量、判讀到日常照護的專業資訊整理，飼主的無壓力筆記。</p>
 					</div>
 
-					{/* 1大2小版面 */}
-					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
-						{/* 大文章 */}
-						<a href="#" class="md:col-span-7 group flex flex-col bg-[#FDFBF7] rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-							<div class="aspect-[16/9] md:aspect-[3/2] bg-gray-200 overflow-hidden">
-								<img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?q=80&w=2000&auto=format&fit=crop" alt="貓咪糖尿病指南" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-							</div>
-							<div class="p-8 flex flex-col flex-1">
-								<span class="text-xs font-bold text-[#7E9883] uppercase tracking-wider mb-2">核心指南</span>
-								<h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-[#A67C52] transition-colors">貓咪糖尿病完整指南：從發現症狀到居家照護</h3>
-								<p class="text-gray-500 mb-4 line-clamp-3">這是一篇給新手糖貓家長的定心丸。我們將美國動物醫院協會(AAHA)的專業指南翻譯成白話，告訴你在台灣實際會遇到的狀況與照護重點。</p>
-								<div class="mt-auto text-xs text-gray-400 font-medium">更新於 2026/09/01 · 約 12 分鐘閱讀</div>
-							</div>
-						</a>
-
-						{/* 2小文章 */}
-						<div class="md:col-span-5 flex flex-col gap-8">
-							<a href="#" class="group flex flex-row items-center gap-4 bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-								<div class="w-24 h-24 shrink-0 rounded-xl overflow-hidden bg-gray-100">
-									<img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+					{latestPost && (
+						<div class="max-w-4xl mx-auto mb-10">
+							<a href={/blog/ + latestPost.slug + /} class="group flex flex-col bg-[#FDFBF7] rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+								<div class="aspect-[16/9] md:aspect-[2/1] bg-gray-200 overflow-hidden relative">
+									<img src="../../assets/blog-placeholder-1.jpg" alt={latestPost.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
 								</div>
-								<div class="flex flex-col">
-									<span class="text-[10px] font-bold text-[#7E9883] uppercase tracking-wider mb-1">日常照護</span>
-									<h3 class="text-base font-bold text-gray-800 mb-1 group-hover:text-[#A67C52] transition-colors line-clamp-2">貓咪血糖正常值是多少？簡單好懂的判讀懶人包</h3>
-									<div class="text-[10px] text-gray-400 font-medium">更新於 2026/08/28 · 約 5 分鐘</div>
-								</div>
-							</a>
-
-							<a href="#" class="group flex flex-row items-center gap-4 bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-								<div class="w-24 h-24 shrink-0 rounded-xl overflow-hidden bg-gray-100">
-									<img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
-								</div>
-								<div class="flex flex-col">
-									<span class="text-[10px] font-bold text-[#7E9883] uppercase tracking-wider mb-1">工具評測</span>
-									<h3 class="text-base font-bold text-gray-800 mb-1 group-hover:text-[#A67C52] transition-colors line-clamp-2">人類血糖機可以測貓嗎？5款熱門機型優缺點比較</h3>
-									<div class="text-[10px] text-gray-400 font-medium">更新於 2026/08/25 · 約 8 分鐘</div>
+								<div class="p-8 flex flex-col flex-1">
+									<span class="text-xs font-bold text-[#7E9883] uppercase tracking-wider mb-2">{latestPost.data.category || '文章'}</span>
+									<h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-[#A67C52] transition-colors">{latestPost.data.title}</h3>
+									<p class="text-gray-500 mb-4 line-clamp-3">{latestPost.data.description}</p>
+									<div class="mt-auto text-xs text-gray-400 font-medium">
+										2026/09/02
+									</div>
 								</div>
 							</a>
 						</div>
-					</div>
+					)}
 
 					<div class="text-center">
-						<a href="/category/health" class="inline-flex items-center gap-2 text-[#A67C52] font-bold hover:text-[#8C6239] transition-colors">
-							查看完整寵物血糖專題 <span>&rarr;</span>
-						</a>
-					</div>
-				</div>
-			</section>
-
-			{/* 第四區：App 宣傳區 */}
-			<section class="bg-[#F8F5F0] py-16 md:py-24 border-y border-gray-200">
-				<div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-					{/* Text */}
-					<div class="flex-1 order-2 md:order-1 text-center md:text-left">
-						<h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4 tracking-wide">寵物血糖日記</h2>
-						<p class="text-lg text-gray-600 mb-8">為需要記錄毛孩血糖的飼主設計的照護紀錄工具。</p>
-						<ul class="space-y-4 mb-8 text-left inline-block md:block">
-							<li class="flex items-center gap-3 text-gray-700">
-								<svg class="w-6 h-6 text-[#7E9883] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-								輕鬆紀錄血糖、胰島素與飲食
-							</li>
-							<li class="flex items-center gap-3 text-gray-700">
-								<svg class="w-6 h-6 text-[#7E9883] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-								內建數值計算機，手動計算免切換 App
-							</li>
-							<li class="flex items-center gap-3 text-gray-700 font-bold bg-white p-3 rounded-xl shadow-sm border border-gray-100">
-								<svg class="w-6 h-6 text-[#A67C52] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-								讓照護資料更容易提供給獸醫參考
-							</li>
-						</ul>
-						<div class="text-center md:text-left">
-							<a href="https://mewsugar-tracker.pages.dev" target="_blank" class="inline-block bg-[#A67C52] text-white px-8 py-4 rounded-full font-bold hover:bg-[#8C6239] transition-colors shadow-md">
-								了解寵物血糖日記 &rarr;
-							</a>
-						</div>
-					</div>
-					{/* Image */}
-					<div class="flex-1 order-1 md:order-2 w-full max-w-sm mx-auto">
-						<div class="bg-white p-4 rounded-[2.5rem] shadow-2xl border-4 border-gray-100">
-							<!-- App Screenshot Placeholder -->
-							<div class="aspect-[9/19] bg-gray-100 rounded-[1.5rem] overflow-hidden relative">
-								<div class="absolute inset-0 bg-[#A67C52] bg-opacity-10 flex items-center justify-center text-[#A67C52] font-bold">
-									[ App Screenshot ]
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* 第五區：最新生活文章 */}
-			<section class="bg-white py-16 md:py-24">
-				<div class="max-w-6xl mx-auto px-4">
-					<div class="text-center mb-12">
-						<h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4 tracking-wide">質感好物與日常探索</h2>
-					</div>
-					
-					{/* 3欄 Grid */}
-					<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-						{/* 佔位卡片 1 */}
-						<a href="#" class="group block">
-							<div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden mb-4"></div>
-							<span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 block">生活實用</span>
-							<h3 class="font-bold text-gray-800 group-hover:text-[#A67C52] transition-colors">好用的除濕機開箱與長期使用心得</h3>
-						</a>
-						{/* 佔位卡片 2 */}
-						<a href="#" class="group block">
-							<div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden mb-4"></div>
-							<span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 block">毛孩生活</span>
-							<h3 class="font-bold text-gray-800 group-hover:text-[#A67C52] transition-colors">如何打造讓貓咪安心的友善居家空間？</h3>
-						</a>
-						{/* 佔位卡片 3 */}
-						<a href="#" class="group block hidden sm:block">
-							<div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden mb-4"></div>
-							<span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 block">我的日常</span>
-							<h3 class="font-bold text-gray-800 group-hover:text-[#A67C52] transition-colors">最近看的一本好書，關於接受不完美</h3>
-						</a>
-					</div>
-
-					<div class="text-center">
-						<a href="/blog" class="inline-block bg-white text-gray-600 border border-gray-300 px-6 py-2 rounded-full font-medium hover:bg-gray-50 transition-colors">
-							閱讀更多生活文章 &rarr;
+						<a href="/blog" class="inline-flex items-center gap-2 text-[#A67C52] font-bold hover:text-[#8C6239] transition-colors">
+							查看所有文章 <span>&rarr;</span>
 						</a>
 					</div>
 				</div>
