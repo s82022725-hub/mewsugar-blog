@@ -1,9 +1,10 @@
----
+﻿---
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -24,23 +25,23 @@ const latestPost = posts[0];
 			<section class="max-w-6xl mx-auto px-4 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-12">
 				<div class="flex-1 text-center md:text-left">
 					<h1 class="text-2xl md:text-4xl font-semibold text-[#A67C52] leading-snug mb-6 text-balance tracking-wide">
-						記錄毛孩健康生活，<br/>分享生活裡的半糖好東西。
+						閮?瘥酋?亙熒?暑嚗?br/>?澈?暑鋆∠???憟賣镼踴?
 					</h1>
 					<p class="text-base md:text-lg text-gray-500 mb-10 font-normal tracking-wide">
-						半糖日常 - 毛孩健康與質感好物探索
+						???亙虜 - 瘥酋?亙熒?釭?末?拇蝝?
 					</p>
 					<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 						<a href="/category/health" class="bg-[#A67C52] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8C6239] transition-colors shadow-md text-center whitespace-nowrap">
-							探索寵物健康
+							?Ｙ揣撖萇?亙熒
 						</a>
 						<a href="/blog" class="bg-white text-[#A67C52] border-2 border-[#A67C52] px-8 py-3 rounded-full font-bold hover:bg-[#FDFBF7] transition-colors shadow-sm text-center whitespace-nowrap">
-							所有文章
+							???蝡?
 						</a>
 					</div>
 				</div>
 				<div class="flex-1 w-full max-w-lg mx-auto md:max-w-none">
 					<div class="aspect-[4/3] bg-gray-100 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-						<img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?q=80&w=2070&auto=format&fit=crop" alt="貓咪在溫暖客廳" class="w-full h-full object-cover opacity-90" />
+						<img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?q=80&w=2070&auto=format&fit=crop" alt="鞎?冽澈?恥撱? class="w-full h-full object-cover opacity-90" />
 					</div>
 				</div>
 			</section>
@@ -48,18 +49,18 @@ const latestPost = posts[0];
 			<section class="bg-white py-16 md:py-24">
 				<div class="max-w-6xl mx-auto px-4">
 					<div class="text-center mb-12">
-						<h2 class="text-xl md:text-2xl font-semibold text-[#A67C52] mb-4 tracking-wide">最新核心指南</h2>
-						<p class="text-gray-500">從測量、判讀到日常照護的專業資訊整理，飼主的無壓力筆記。</p>
+						<h2 class="text-xl md:text-2xl font-semibold text-[#A67C52] mb-4 tracking-wide">??唳敹???/h2>
+						<p class="text-gray-500">敺葫?霈?唳撣貊霅瑞?撠平鞈??渡?嚗ˉ銝餌??∪???閮?/p>
 					</div>
 
 					{latestPost && (
 						<div class="max-w-4xl mx-auto mb-10">
 							<a href={'/blog/' + latestPost.id + '/'} class="group flex flex-col bg-[#FDFBF7] rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
 								<div class="aspect-[16/9] md:aspect-[2/1] bg-gray-200 overflow-hidden relative">
-									<img src="../../assets/blog-placeholder-1.jpg" alt={latestPost.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+									{latestPost.data.heroImage && <Image src={latestPost.data.heroImage} alt={latestPost.data.title} width={800} height={400} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />}
 								</div>
 								<div class="p-8 flex flex-col flex-1">
-									<span class="text-xs font-bold text-[#7E9883] uppercase tracking-wider mb-2">{latestPost.data.category || '文章'}</span>
+									<span class="text-xs font-bold text-[#7E9883] uppercase tracking-wider mb-2">{latestPost.data.category || '??'}</span>
 									<h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-[#A67C52] transition-colors">{latestPost.data.title}</h3>
 									<p class="text-gray-500 mb-4 line-clamp-3">{latestPost.data.description}</p>
 									<div class="mt-auto text-xs text-gray-400 font-medium">
@@ -72,7 +73,7 @@ const latestPost = posts[0];
 
 					<div class="text-center">
 						<a href="/blog" class="inline-flex items-center gap-2 text-[#A67C52] font-bold hover:text-[#8C6239] transition-colors">
-							查看所有文章 <span>&rarr;</span>
+							?亦????蝡?<span>&rarr;</span>
 						</a>
 					</div>
 				</div>
@@ -82,3 +83,4 @@ const latestPost = posts[0];
 		<Footer />
 	</body>
 </html>
+
