@@ -22,7 +22,21 @@ jobs:
         run: npm install
 
       - name: Build Astro
-        run: npm run build > build.log 2>&1 || (cat build.log && exit 1)
+        run: npm run build > build.log 2>&1 || true
+
+      - name: Upload build log
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
+
+      - name: Check build status
+        run: |
+          if grep -qi "error" build.log; then
+            echo "Build failed!"
+            cat build.log
+            exit 1
+          fi
 
       - name: Deploy to Cloudflare
         uses: cloudflare/wrangler-action@v3
