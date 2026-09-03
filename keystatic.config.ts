@@ -15,7 +15,7 @@ export default config({
       path: 'src/content/blog/*',
       format: { contentField: 'content' },
       schema: {
-        title: fields.text({ label: 'Title' }),
+        title: fields.text({ label: 'Title', validation: { length: { min: 1 } } }),
         description: fields.text({ label: 'Description' }),
         pubDate: fields.date({ label: 'Publish Date' }),
         updatedDate: fields.date({ label: 'Update Date' }),
