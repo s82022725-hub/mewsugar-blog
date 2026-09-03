@@ -22,25 +22,10 @@ jobs:
         run: npm install
 
       - name: Build Astro
-        run: npm run build > build.log 2>&1 || true
-
-      - name: Upload build log
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-log
-          path: build.log
-
-      - name: Check build status
-        run: |
-          if grep -qi "error" build.log; then
-            echo "Build failed!"
-            cat build.log
-            exit 1
-          fi
+        run: npm run build
 
       - name: Deploy to Cloudflare
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+        run: npx wrangler deploy > deploy.log 2>&1 || (cat deploy.log && exit 1)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
