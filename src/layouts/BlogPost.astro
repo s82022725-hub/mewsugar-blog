@@ -33,8 +33,11 @@ const categoryName = categoryMap[category as string] || '文章';
 				
 				{/* Hero Image */}
 				{heroImage && (
-					<div class="w-full bg-gray-50 flex items-center justify-center border-b border-gray-100">
-						<Image width={1200} height={800} src={heroImage} alt={title} class="w-full max-h-[600px] object-contain" />
+					<div class="relative w-full max-h-[600px] overflow-hidden flex items-center justify-center bg-gray-900 border-b border-gray-100">
+						{/* Blurred Background */}
+						<Image width={400} height={300} src={heroImage} alt="" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-60 scale-125" />
+						{/* Main Image */}
+						<Image width={1200} height={800} src={heroImage} alt={title} class="relative z-10 w-full max-h-[600px] object-contain drop-shadow-2xl" />
 					</div>
 				)}
 
