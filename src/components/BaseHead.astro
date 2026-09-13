@@ -1,5 +1,4 @@
-﻿---
-const { title, description, image = '/blog-placeholder-1.jpg', draft = false } = Astro.props;
+---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
@@ -18,7 +17,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage } = Astro.props;
 ---
-const { title, description, image = '/blog-placeholder-1.jpg', draft = false } = Astro.props;
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYWRHVSLF1"></script>
@@ -62,4 +60,3 @@ const { title, description, image = '/blog-placeholder-1.jpg', draft = false } =
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-

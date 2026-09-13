@@ -1,4 +1,4 @@
-﻿---
+---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
@@ -13,12 +13,12 @@ const { title, description, pubDate, updatedDate, heroImage, category, author, r
 
 // Category Name Mapping
 const categoryMap: Record<string, string> = {
-	'health': '撖萇?亙熒',
-	'pets-life': '瘥酋?暑',
-	'reviews': '?暑撖衣',
-	'notes': '???亙虜'
+	'health': '寵物健康',
+	'pets-life': '毛孩生活',
+	'reviews': '生活實用',
+	'notes': '我的日常'
 };
-const categoryName = categoryMap[category as string] || '??';
+const categoryName = categoryMap[category as string] || '文章';
 ---
 
 <html lang="zh-TW">
@@ -78,11 +78,12 @@ const categoryName = categoryMap[category as string] || '??';
 						<div class="mt-16 pt-8 border-t border-gray-100 bg-gray-50 rounded-2xl p-6 md:p-8">
 							<h3 class="text-xl font-bold text-gray-700 flex items-center gap-2 mb-4">
 								<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-								????							</h3>
+								參考資料
+							</h3>
 							<ul class="space-y-2 text-sm text-gray-500">
 								{references.map((ref) => (
 									<li class="flex items-start gap-2">
-										<span class="text-[#A67C52] mt-0.5">??/span>
+										<span class="text-[#A67C52] mt-0.5">•</span>
 										<a href={ref.url} target="_blank" rel="noopener noreferrer" class="hover:text-[#A67C52] transition-colors underline underline-offset-4 decoration-gray-300 hover:decoration-[#A67C52]">
 											{ref.title}
 										</a>
@@ -97,4 +98,3 @@ const categoryName = categoryMap[category as string] || '??';
 		<Footer />
 	</body>
 </html>
-
