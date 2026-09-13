@@ -24,11 +24,13 @@ export default config({
         author: fields.text({ label: 'Author', defaultValue: 'MewSugar' }),
         tags: fields.array(fields.text({ label: 'Tag' }), { label: 'Tags', itemLabel: props => props.value }),
         featured: fields.checkbox({ label: 'Featured', defaultValue: true }),
+        draft: fields.checkbox({ label: '草稿 (勾選時不會顯示在首頁，僅限隱藏網址預覽)', defaultValue: true }),
         content: fields.markdoc({ label: 'Content', extension: 'md' }),
       },
     }),
   },
 });
+
 
 
 

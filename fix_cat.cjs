@@ -1,4 +1,6 @@
----
+﻿const fs = require('fs');
+
+const content = `---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseHead from '../../components/BaseHead.astro';
@@ -15,10 +17,9 @@ export async function getStaticPaths() {
 	];
 
 	const posts = await getCollection('blog');
-	const publicPosts = posts.filter((post) => !post.data.draft);
 
 	return categories.map((category) => {
-		const filteredPosts = publicPosts.filter((post) => post.data.category === category.id)
+		const filteredPosts = posts.filter((post) => post.data.category === category.id)
 								   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 		return {
 			params: { category: category.id },
@@ -34,7 +35,7 @@ const { categoryName, posts } = Astro.props;
 <!doctype html>
 <html lang="zh-TW">
 	<head>
-		<BaseHead title={`${categoryName} | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={\`${categoryName} | ${SITE_TITLE}\`} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-[#FDFBF7] text-[#4A5568] font-sans antialiased min-h-screen flex flex-col">
 		<Header />
@@ -53,7 +54,7 @@ const { categoryName, posts } = Astro.props;
 			) : (
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{posts.map((post) => (
-						<a href={`/blog/${post.id}/`} class="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+						<a href={\`/blog/${post.id}/\`} class="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
 							<div class="aspect-[4/3] bg-gray-100 overflow-hidden relative">
 								{post.data.heroImage ? (
 									<Image width={600} height={450} src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -81,4 +82,6 @@ const { categoryName, posts } = Astro.props;
 		</main>
 		<Footer />
 	</body>
-</html>
+</html>`;
+
+fs.writeFileSync('src/pages/category/[category].astro', content, 'utf8');

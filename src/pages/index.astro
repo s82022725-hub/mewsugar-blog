@@ -7,8 +7,10 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import heroHome from '../assets/hero-home.jpg';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+const posts = (await getCollection('blog'))
+	.filter(post => !post.data.draft)
+	.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const latestPost = posts[0];
