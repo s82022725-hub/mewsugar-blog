@@ -1,0 +1,14 @@
+﻿const fs = require('fs');
+let keystatic = fs.readFileSync('keystatic.config.ts', 'utf8');
+keystatic = keystatic.replace(/label: 'Blog Posts'/g, "label: '部落格文章'");
+keystatic = keystatic.replace(/label: 'Title'/g, "label: '文章標題'");
+keystatic = keystatic.replace(/label: 'Description'/g, "label: '文章簡介 (用於預覽與SEO)'");
+keystatic = keystatic.replace(/label: 'Publish Date'/g, "label: '發布日期'");
+keystatic = keystatic.replace(/label: 'Update Date'/g, "label: '最後更新日期'");
+keystatic = keystatic.replace(/label: 'Hero Image'/g, "label: '封面圖片'");
+keystatic = keystatic.replace(/label: 'Category'/g, "label: '文章分類'");
+keystatic = keystatic.replace(/label: 'Author'/g, "label: '作者'");
+keystatic = keystatic.replace(/label: 'Tags'/g, "label: '標籤'");
+keystatic = keystatic.replace(/label: 'Featured'/g, "label: '置頂精選'");
+keystatic = keystatic.replace(/label: 'Content'/g, "label: '文章內容'");
+fs.writeFileSync('keystatic.config.ts', keystatic, 'utf8');

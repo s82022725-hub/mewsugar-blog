@@ -11,11 +11,12 @@ export default config({
   collections: {
     posts: collection({
       label: '部落格文章',
-      slugField: 'title',
+      slugField: 'slug',
       path: 'src/content/blog/*',
       format: { contentField: 'content' },
       schema: {
-        title: fields.text({ label: '文章標題', validation: { length: { min: 1 } } }),
+        title: fields.text({ label: '文章標題 (寫中文)', validation: { length: { min: 1 } } }),
+        slug: fields.text({ label: '專屬網址 (僅限英文與橫線)', validation: { length: { min: 1 } } }),
         description: fields.text({ label: '文章簡介 (用於預覽與SEO)' }),
         pubDate: fields.date({ label: '發布日期' }),
         updatedDate: fields.date({ label: '最後更新日期' }),
@@ -30,6 +31,7 @@ export default config({
     }),
   },
 });
+
 
 
 
