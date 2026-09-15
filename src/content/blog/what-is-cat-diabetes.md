@@ -4,7 +4,7 @@ slug: 'what-is-cat-diabetes'
 description: '貓咪狂喝水、食慾大增卻變瘦？這可能是貓咪糖尿病的警訊！深入了解貓咪糖尿病的症狀、成因、治療方法，以及居家照護的實用技巧，幫助您的毛孩重拾健康生活。'
 pubDate: 2026-09-08T00:00:00.000Z
 updatedDate: 2026-09-08T00:00:00.000Z
-heroImage: '../../assets/cat-diabetes-hero.png'
+heroImage: '../../assets/what-is-cat-diabetes/heroImage.jpeg'
 category: health
 author: '半糖日常'
 tags:
