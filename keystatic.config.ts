@@ -12,6 +12,7 @@ export default config({
     posts: collection({
       label: '部落格文章',
       slugField: 'slug',
+      columns: ['title'],
       path: 'src/content/blog/*',
       format: { contentField: 'content' },
       schema: {
