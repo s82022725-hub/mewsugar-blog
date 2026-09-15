@@ -1,13 +1,15 @@
-﻿---
-title: "貓咪一直喝水、狂尿尿是糖尿病嗎？3大潛在疾病與就醫指南"
-slug: 'cat-drinking-much-water'
-description: "貓咪平時不愛喝水，突然變成水桶，很多家長覺得很開心，但這其實是危險警訊！教你計算貓咪的正常飲水量，並帶你認識慢性腎衰竭、糖尿病、甲狀腺亢進這3大常見的老年疾病。"
-pubDate: "2026-09-13"
-category: "health"
-author: "MewSugar"
-featured: true
+---
+title: 貓咪一直喝水、狂尿尿是糖尿病嗎？3大潛在疾病與就醫指南
+description: >-
+  貓咪平時不愛喝水，突然變成水桶，很多家長覺得很開心，但這其實是危險警訊！教你計算貓咪的正常飲水量，並帶你認識慢性腎衰竭、糖尿病、甲狀腺亢進這3大常見的老年疾病。
+pubDate: 2026-09-13
+category: health
+author: MewSugar
+tags: []
+featured: false
 draft: true
 ---
+--
 
 貓咪平時不愛喝水，突然變成「大水桶」，很多家長一開始可能會覺得很開心，想說主子終於開竅了，不用再辛辛苦苦騙水喝。
 
