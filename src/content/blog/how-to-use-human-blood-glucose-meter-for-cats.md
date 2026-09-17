@@ -8,7 +8,7 @@ category: health
 author: MewSugar
 tags: []
 featured: false
-draft: true
+draft: false
 ---
 得知貓咪確診糖尿病後，許多飼主面臨的第一個挑戰就是：「我該怎麼幫貓咪測血糖？」
 
