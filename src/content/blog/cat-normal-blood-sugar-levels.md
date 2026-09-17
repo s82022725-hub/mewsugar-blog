@@ -2,7 +2,7 @@
 title: "貓咪血糖正常值是多少？不要只看單一數字！"
 slug: 'cat-normal-blood-sugar-levels'
 description: "剛開始幫貓咪測血糖的飼主，最常問的就是：「我家貓咪今天血糖 250，這樣算正常嗎？」這篇文章將帶您了解貓咪血糖的正常範圍，以及為什麼在糖尿病照護中，看「趨勢曲線」遠比盯著單一數字更重要！"
-pubDate: "2026-09-22"
+pubDate: "2026-09-18"
 category: "health"
 author: "MewSugar"
 featured: true
