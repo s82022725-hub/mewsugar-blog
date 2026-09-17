@@ -2,7 +2,7 @@
 title: "貓咪測血糖免驚！如何使用人類血糖機幫貓咪測血糖？"
 slug: 'how-to-use-human-blood-glucose-meter-for-cats'
 description: "帶貓咪去獸醫測血糖總是壓力很大？其實您可以在家自己幫貓咪測血糖！這篇教學將帶您了解如何使用便宜好取得的『人類血糖機』，一步步無痛幫貓咪測量，並學會如何紀錄與追蹤。"
-pubDate: "2026-09-19"
+pubDate: "2026-09-17"
 category: "health"
 author: "MewSugar"
 featured: true
