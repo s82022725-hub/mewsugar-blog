@@ -66,10 +66,10 @@ heroImage: "../../assets/cat-normal-blood-sugar-levels/heroImage.jpg"
 2. **最低點（Nadir）：** 打針後幾個小時藥效會達到顛峰、讓血糖降到最低？最低降到多少？
 3. **作用時間：** 這劑胰島素在貓咪體內能維持多久的降糖效果？
 
-### 讓 MewSugar App 幫您畫曲線！
+### 讓 [MewSugar App](/app) 幫您畫曲線！
 
 要手動畫曲線或是用 Excel 拉圖表，對很多家長來說既麻煩又頭痛。
-這時您只需要 **[MewSugar 寵物血糖日記 App](/app)**！
+這時您只需要 **[[MewSugar 寵物血糖日記](/app) App](/app)**！
 
 只要把每次測量到的數字輸入 App，系統就會自動幫您生成專業的「血糖曲線趨勢圖」。您可以清楚看到：
 - 紅色的點代表偏高
