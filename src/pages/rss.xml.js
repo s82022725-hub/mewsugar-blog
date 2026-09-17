@@ -4,7 +4,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 export async function GET(context) {
 	const posts = await getCollection('blog');
-	const publicPosts = posts.filter((post) => !post.data.draft);
+	const publicPosts = posts.filter((post) => !post.data.draft && post.data.pubDate <= new Date());
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,

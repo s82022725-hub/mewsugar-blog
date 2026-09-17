@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 	];
 
 	const posts = await getCollection('blog');
-	const publicPosts = posts.filter((post) => !post.data.draft);
+	const publicPosts = posts.filter((post) => !post.data.draft && post.data.pubDate <= new Date());
 
 	return categories.map((category) => {
 		const filteredPosts = publicPosts.filter((post) => post.data.category === category.id)

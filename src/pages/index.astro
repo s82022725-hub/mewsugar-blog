@@ -9,7 +9,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import heroHome from '../assets/hero-home.jpg';
 
 const posts = (await getCollection('blog'))
-	.filter(post => !post.data.draft)
+	.filter(post => !post.data.draft && post.data.pubDate <= new Date())
 	.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
