@@ -8,8 +8,8 @@ heroImage: ../../assets/cat-normal-blood-sugar-levels/heroImage.jpg
 category: health
 author: MewSugar
 tags: []
-featured: true
-draft: true
+featured: false
+draft: false
 ---
 # 糖尿病貓咪血糖多少才算正常？先別被單一數字嚇到
 
