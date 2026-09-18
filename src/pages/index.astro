@@ -10,8 +10,14 @@ import heroHome from '../assets/hero-home.jpg';
 
 const posts = (await getCollection('blog'))
 	.filter(post => !post.data.draft && post.data.pubDate <= new Date())
-	.sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	.sort((a, b) => {
+		const aFeatured = !!a.data.featured;
+		const bFeatured = !!b.data.featured;
+		if (aFeatured === bFeatured) {
+			return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+		}
+		return aFeatured ? -1 : 1;
+	}) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const latestPosts = posts.slice(0, 3);
@@ -67,6 +73,11 @@ const latestPosts = posts.slice(0, 3);
 									) : (
 										<div class="w-full h-full flex items-center justify-center text-gray-400">無圖片</div>
 									)}
+								
+								{post.data.featured && (
+									<span class="absolute top-4 left-4 bg-[#FF6F61] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">精選</span>
+								)}
+
 								</div>
 								<div class="p-6 flex flex-col flex-grow">
 									{post.data.category && (
