@@ -7,8 +7,8 @@ heroImage: ../../assets/cat-blood-sugar-fluctuation-reasons/heroImage.jpg
 category: health
 author: MewSugar
 tags: []
-featured: true
-draft: true
+featured: false
+draft: false
 ---
 # 為什麼糖貓的血糖忽高忽低？3 個常見原因
 
