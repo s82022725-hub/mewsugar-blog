@@ -17,8 +17,7 @@ const posts = (await getCollection('blog'))
 			return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 		}
 		return aFeatured ? -1 : 1;
-	}) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+	});
 
 const latestPosts = posts.slice(0, 3);
 ---

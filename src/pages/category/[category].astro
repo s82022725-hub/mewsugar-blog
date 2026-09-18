@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 		{ id: 'health', name: '寵物健康' },
 		{ id: 'pets-life', name: '毛孩生活' },
 		{ id: 'reviews', name: '生活實用' },
-		{ id: 'notes', name: '我的日常' },
+		{ id: 'notes', name: '半糖日常' },
 	];
 
 	const posts = await getCollection('blog');
@@ -19,7 +19,14 @@ export async function getStaticPaths() {
 
 	return categories.map((category) => {
 		const filteredPosts = publicPosts.filter((post) => post.data.category === category.id)
-								   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+			.sort((a, b) => {
+				const aFeatured = !!a.data.featured;
+				const bFeatured = !!b.data.featured;
+				if (aFeatured === bFeatured) {
+					return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+				}
+				return aFeatured ? -1 : 1;
+			});
 		return {
 			params: { category: category.id },
 			props: { categoryName: category.name, posts: filteredPosts },
