@@ -1,0 +1,14 @@
+name: Daily Scheduled Deploy
+
+on:
+  schedule:
+    # Runs at 00:15 Taiwan Time (UTC+8) which is 16:15 UTC every day
+    - cron: '15 16 * * *'
+  workflow_dispatch: # Allows manual triggering from GitHub Actions UI
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages Deploy Hook
+        run: curl -X POST "https://api.cloudflare.com/client/v4/workers/builds/deploy_hooks/0e38d518-2abd-4629-97c4-653901de25d6"
