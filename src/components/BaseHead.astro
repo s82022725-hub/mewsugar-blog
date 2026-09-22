@@ -44,6 +44,15 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 <Font cssVariable="--font-atkinson" preload />
 
+
+<!-- Site Name JSON-LD -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": SITE_TITLE,
+  "url": Astro.site
+})} />
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
