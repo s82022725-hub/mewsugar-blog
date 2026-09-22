@@ -1,14 +1,16 @@
-﻿---
-title: "貓咪糖尿病吃什麼？乾飼料可以嗎？怎麼挑？"
-slug: 'cat-diabetes-diet-dry-food-vs-wet-food'
-description: "貓咪確診糖尿病後，飲食管理是逆轉病情的關鍵！乾飼料可以吃嗎？處方飼料真的比較好嗎？這篇文章教您如何挑選「低碳水、高蛋白」的完美糖貓飲食，並為您推薦幾款優質的低碳罐頭。"
-pubDate: "2026-09-25"
-category: "health"
-author: "MewSugar"
-featured: true
-draft: true
-heroImage: "../../assets/cat-diabetes-diet-dry-food-vs-wet-food/heroImage.jpg"
 ---
+title: 貓咪糖尿病吃什麼？乾飼料可以嗎？怎麼挑？
+description: >-
+  貓咪確診糖尿病後，飲食管理是逆轉病情的關鍵！乾飼料可以吃嗎？處方飼料真的比較好嗎？這篇文章教您如何挑選「低碳水、高蛋白」的完美糖貓飲食，並為您推薦幾款優質的低碳罐頭。
+pubDate: 2026-09-25
+heroImage: ../../assets/cat-diabetes-diet-dry-food-vs-wet-food/heroImage.jpg
+category: health
+author: MewSugar
+tags: []
+featured: false
+draft: true
+---
+--
 
 「醫生說我的貓得糖尿病了，叫我換處方飼料，但我家貓根本不吃怎麼辦？」
 
@@ -32,14 +34,17 @@ heroImage: "../../assets/cat-diabetes-diet-dry-food-vs-wet-food/heroImage.jpg"
 ## 乾飼料 vs. 濕食（罐頭/生食）怎麼選？
 
 ### ❌ 為什麼不建議餵一般乾飼料？
+
 為了讓乾飼料成型，製造過程中不可避免地必須加入大量的澱粉（馬鈴薯、玉米、豆類等）。市面上絕大多數的「一般貓咪乾飼料」，碳水化合物比例通常高達 25% ~ 40%！這對糖貓來說，簡直就像是每天照三餐在吃蛋糕跟珍珠奶茶，血糖絕對不可能穩定。
 
 ### ⚠️ 糖尿病「處方飼料」真的好嗎？
+
 獸醫院通常會推薦糖尿病專用的處方乾飼料（例如某大廠的 m/d 或 w/d）。這些飼料確實有降低一部分碳水化合物，並增加膳食纖維來延緩血糖上升。
 **但是，它們的碳水比例通常還是落在 15% 左右，仍然超出了理想的 10% 以下。**
 而且乾飼料含水量極低，對於已經因為多尿而處於長期脫水邊緣的糖貓來說，非常不利於腎臟健康。
 
 ### ✅ 最理想的選擇：優質的低碳水「濕食」
+
 不管是主食罐、生食還是鮮食，只要符合「低碳水、高蛋白」且營養均衡，就是糖貓最好的選擇！濕食不僅碳水極低（有些甚至趨近於 0%），還能順便幫貓咪補充大量水分，保護已經非常脆弱的腎臟。
 
 ---
@@ -60,12 +65,12 @@ heroImage: "../../assets/cat-diabetes-diet-dry-food-vs-wet-food/heroImage.jpg"
 *(這兩個按鈕是預留給您放專屬分潤連結的絕佳位置，只要點擊就會前往蝦皮購買！)*
 
 <div class="not-prose my-8 flex flex-col gap-4 max-w-sm mx-auto">
-  <a href="#" target="_blank" class="block w-full bg-[#EE4D2D] text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-[#D73211] transition-transform hover:-translate-y-1 text-center text-lg">
-    🛒 蝦皮商城｜【品牌 A】低碳水主食罐
-  </a>
-  <a href="#" target="_blank" class="block w-full bg-[#EE4D2D] text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-[#D73211] transition-transform hover:-translate-y-1 text-center text-lg">
-    🛒 蝦皮商城｜【品牌 B】無膠肉泥推薦
-  </a>
+<a href="#" target="_blank" class="block w-full bg-[#EE4D2D] text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-[#D73211] transition-transform hover:-translate-y-1 text-center text-lg">
+🛒 蝦皮商城｜【品牌 A】低碳水主食罐
+</a>
+<a href="#" target="_blank" class="block w-full bg-[#EE4D2D] text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-[#D73211] transition-transform hover:-translate-y-1 text-center text-lg">
+🛒 蝦皮商城｜【品牌 B】無膠肉泥推薦
+</a>
 </div>
 
-**溫馨小提醒：** 幫貓咪換食（尤其是從乾飼料換成濕食）需要極大的耐心，請採取「循序漸進」的方式，每天增加一點點濕食的比例，慢慢騙貓咪吃下去。換食期間血糖可能會因為碳水減少而明顯下降，請務必密切使用 **[MewSugar App](/app)** 記錄血糖，並隨時與獸醫師討論是否需要減少胰島素劑量喔！
+**溫馨小提醒：** 幫貓咪換食（尤其是從乾飼料換成濕食）需要極大的耐心，請採取「循序漸進」的方式，每天增加一點點濕食的比例，慢慢騙貓咪吃下去。換食期間血糖可能會因為碳水減少而明顯下降，請務必密切使用 [**MewSugar App**](/app) 記錄血糖，並隨時與獸醫師討論是否需要減少胰島素劑量喔！
