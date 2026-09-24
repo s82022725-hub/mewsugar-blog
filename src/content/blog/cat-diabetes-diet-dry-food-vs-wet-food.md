@@ -1,7 +1,6 @@
 ---
 title: 貓咪糖尿病吃什麼？乾飼料可以嗎？怎麼挑？
-description: >-
-  貓咪確診糖尿病後，飲食管理是逆轉病情的關鍵！乾飼料可以吃嗎？處方飼料真的比較好嗎？這篇文章教您如何挑選「低碳水、高蛋白」的完美糖貓飲食，並為您推薦幾款優質的低碳罐頭。
+description: 糖尿病貓咪怎麼吃？醫生叫我換處方飼料，但貓咪不吃怎麼辦？
 pubDate: 2026-09-25
 heroImage: ../../assets/cat-diabetes-diet-dry-food-vs-wet-food/heroImage.jpg
 category: health
