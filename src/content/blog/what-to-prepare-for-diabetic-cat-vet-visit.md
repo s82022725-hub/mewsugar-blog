@@ -8,7 +8,7 @@ category: notes
 author: MewSugar
 tags: []
 featured: false
-draft: false
+draft: true
 ---
 ## 為什麼回診不能只靠「口頭報告」？
 
