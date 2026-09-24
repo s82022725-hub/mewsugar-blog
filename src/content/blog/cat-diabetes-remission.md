@@ -8,7 +8,7 @@ category: health
 author: MewSugar
 tags: []
 featured: false
-draft: true
+draft: false
 ---
 # 什麼是糖尿病緩解？糖貓有機會不用再打胰島素嗎？
 
