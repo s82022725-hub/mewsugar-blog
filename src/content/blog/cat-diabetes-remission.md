@@ -1,7 +1,6 @@
 ---
 title: 貓咪糖尿病會好嗎？淺談糖尿病緩解（Remission）與停針可能
-description: >-
-  確診糖尿病就得打一輩子的針嗎？其實貓咪是有機會達到「糖尿病緩解（Remission）」的！這篇文章將帶你了解什麼是糖尿病緩解、達成緩解的關鍵因素，以及停針後該如何維持貓咪的健康。
+description: 確診糖尿病就得打一輩子的針嗎？其實貓咪是有機會達到「糖尿病緩解」的！這篇文章將帶你了解什麼是糖尿病緩解、達成緩解的關鍵因素，以及停針後該如何維持貓咪的健康。
 pubDate: 2026-09-28
 heroImage: ../../assets/cat-diabetes-remission/heroImage.jpg
 category: health
