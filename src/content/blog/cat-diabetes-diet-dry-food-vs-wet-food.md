@@ -349,7 +349,7 @@ VCA 也指出，使用濕食可以幫助糖尿病貓增加水分攝取。
 
 使用 **MewSugar 寵物血糖日記**，可以把血糖、飲食、胰島素與日常觀察整理在一起，之後回診時也能把這些紀錄提供給獸醫師參考。
 
-[👉 開始使用 MewSugar 寵物血糖日記](https://mewsugar-tracker.pages.dev/)
+👉 [開始使用 MewSugar 寵物血糖日記](https://mewsugar-tracker.pages.dev/)
 
 ---
 
