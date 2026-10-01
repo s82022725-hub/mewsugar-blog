@@ -133,7 +133,7 @@ draft: false
 
 還在用手寫筆記本或是複雜的 Excel 嗎？
 
-推薦您使用 **[MewSugar 寵物血糖日記](/app)**！
+推薦您使用 [**MewSugar 寵物血糖日記**](/app)！
 
 有了這個 App，您可以在測完血糖後：
 
