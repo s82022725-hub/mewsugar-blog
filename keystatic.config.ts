@@ -22,7 +22,16 @@ export default config({
         pubDate: fields.date({ label: '發布日期' }),
         updatedDate: fields.date({ label: '最後更新日期' }),
         heroImage: fields.image({ label: '封面圖片', directory: 'src/assets', publicPath: '../../assets', validation: { isRequired: false } }),
-        category: fields.text({ label: '文章分類', defaultValue: 'health' }),
+        category: fields.select({
+          label: '文章分類',
+          options: [
+            { label: '寵物健康 (health)', value: 'health' },
+            { label: '毛孩生活 (pets-life)', value: 'pets-life' },
+            { label: '生活實用 (reviews)', value: 'reviews' },
+            { label: '照護日常 (notes)', value: 'notes' }
+          ],
+          defaultValue: 'health'
+        }),
         author: fields.text({ label: '作者', defaultValue: 'MewSugar' }),
         tags: fields.array(fields.text({ label: 'Tag' }), { label: '標籤', itemLabel: props => props.value }),
         featured: fields.checkbox({ label: '置頂精選', defaultValue: true }),
