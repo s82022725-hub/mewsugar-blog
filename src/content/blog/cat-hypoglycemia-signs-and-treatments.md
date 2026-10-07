@@ -253,7 +253,7 @@ AAHA FAQ 明確建議，如果貓咪出現低血糖症狀而不願意吃東西�
 
 ---
 
-## 💡 使用 MewSugar App
+## 💡 [使用 MewSugar App](https://mewsugar-tracker.pages.dev/)
 
 如果平常就有使用 MewSugar 記錄：
 
