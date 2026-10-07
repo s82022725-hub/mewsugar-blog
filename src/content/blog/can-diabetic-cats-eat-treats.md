@@ -4,7 +4,7 @@ description: >-
   貓咪得了糖尿病之後，是不是就此與所有的零食絕緣了？其實只要選對種類、控制好份量，糖貓依然可以享受吃點心的快樂！本篇將教你如何避開地雷，挑選適合糖尿病貓咪的安全零食。
 pubDate: 2026-09-30
 heroImage: ../../assets/can-diabetic-cats-eat-treats/heroImage.jpg
-category: pets-life
+category: health
 author: MewSugar
 tags: []
 featured: false
