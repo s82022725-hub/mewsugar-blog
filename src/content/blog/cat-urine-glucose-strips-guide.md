@@ -285,7 +285,7 @@ CGM 可以連續記錄數天的組織間液葡萄糖，提供比單次尿糖或�
 
 ---
 
-## 💡 使用 MewSugar App
+## 💡 [使用 MewSugar App](https://mewsugar-tracker.pages.dev/)
 
 如果平常就有使用 MewSugar 記錄血糖、飲食、零食、胰島素、體重、喝水、尿尿與精神狀況，這些資料就能集中整理。
 
