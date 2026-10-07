@@ -4,7 +4,7 @@ description: >-
   幫貓咪採血總是失敗，貓咪生氣、你也崩潰嗎？許多新手家長會選擇使用「尿糖試紙」來代替血糖機。但尿糖試紙真的能完全取代血糖監測嗎？這篇文章為你解析尿糖試紙的優缺點與正確使用時機。
 pubDate: 2026-10-07
 heroImage: ../../assets/cat-urine-glucose-strips-guide/heroImage.jpg
-category: reviews
+category: health
 author: MewSugar
 tags: []
 featured: false
