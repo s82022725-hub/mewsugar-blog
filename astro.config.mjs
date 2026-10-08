@@ -1,3 +1,4 @@
+import keystaticTablePlugin from './keystatic-table-plugin.js';
 ﻿import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders, envField } from 'astro/config';
@@ -47,7 +48,7 @@ export default defineConfig({
     ],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [keystaticTablePlugin(), tailwindcss()]
   },
 });
 
