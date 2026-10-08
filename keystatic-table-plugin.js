@@ -3,29 +3,37 @@
     name: 'keystatic-table-plugin',
     enforce: 'pre',
     transform(code, id) {
-      if (!id.endsWith('.mdoc') && !id.endsWith('.md')) return null;
+      if (!id.endsWith('.md')) return null;
 
       // Extract {% table %} blocks
       const tableRegex = /{% table %}([\s\S]*?){% \/table %}/g;
       
       let newCode = code.replace(tableRegex, (match, innerContent) => {
-        // Split by row
-        const rowRegex = /{% tableRow %}([\s\S]*?){% \/tableRow %}/g;
+        const rawRows = innerContent.split(/^---$/m);
         let rows = [];
-        let rowMatch;
-        while ((rowMatch = rowRegex.exec(innerContent)) !== null) {
-          const rowContent = rowMatch[1];
-          // Split by cell
-          const cellRegex = /{% tableCell.*?%}([\s\S]*?){% \/tableCell %}/g;
-          let cells = [];
-          let cellMatch;
-          while ((cellMatch = cellRegex.exec(rowContent)) !== null) {
-            let text = cellMatch[1].trim();
-            // Replace newlines inside cell with <br/> to keep valid markdown table format
-            text = text.replace(/\n/g, '<br/>');
-            cells.push(text);
-          }
-          rows.push(cells);
+        
+        for (const rawRow of rawRows) {
+            const cells = [];
+            const lines = rawRow.split('\n');
+            let currentCell = null;
+            for (let line of lines) {
+                if (line.trim() === '') continue;
+                
+                if (line.startsWith('- ') || line === '-') {
+                    if (currentCell !== null) {
+                        cells.push(currentCell.replace(/\n/g, '<br/>'));
+                    }
+                    currentCell = line.startsWith('- ') ? line.substring(2).trim() : '';
+                } else if (currentCell !== null) {
+                    currentCell += ' ' + line.trim();
+                }
+            }
+            if (currentCell !== null) {
+                cells.push(currentCell.replace(/\n/g, '<br/>'));
+            }
+            if (cells.length > 0) {
+                rows.push(cells);
+            }
         }
 
         if (rows.length === 0) return match;
