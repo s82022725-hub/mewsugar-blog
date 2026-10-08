@@ -36,7 +36,7 @@ export default config({
         tags: fields.array(fields.text({ label: 'Tag' }), { label: '標籤', itemLabel: props => props.value }),
         featured: fields.checkbox({ label: '置頂精選', defaultValue: true }),
         draft: fields.checkbox({ label: '草稿 (勾選時不會顯示在首頁，僅限隱藏網址預覽)', defaultValue: true }),
-        content: fields.markdoc({ label: '文章內容', extension: 'md' }),
+        content: fields.markdoc({ label: '文章內容', extension: 'mdoc' }),
       },
     }),
   },
