@@ -7,7 +7,7 @@
                 },
     "scripts":  {
                     "dev":  "astro dev",
-                    "build":  "node scripts/fix-keystatic-tables.js \u0026\u0026 astro build",
+                    "build":  "node scripts/fix-keystatic-tables.cjs \u0026\u0026 astro build",
                     "preview":  "astro preview",
                     "astro":  "astro"
                 },
